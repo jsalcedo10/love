@@ -1,0 +1,21 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Efecto de textura con CSS puro */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(45deg, #4c1d9530 25%, transparent 25%),
+    linear-gradient(-45deg, #4c1d9530 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #4c1d9530 75%),
+    linear-gradient(-45deg, transparent 75%, #4c1d9530 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 50;
+}
