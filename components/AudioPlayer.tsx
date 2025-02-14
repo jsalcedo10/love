@@ -5,29 +5,26 @@ import { motion } from 'framer-motion';
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasPlayed, setHasPlayed] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        setIsPlaying(false);
       } else {
         audioRef.current.play();
+        setIsPlaying(true);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
-  // Attempt to play audio automatically and handle user interaction
+  // Ensure audio plays only once on first user interaction
   useEffect(() => {
     const handleFirstInteraction = () => {
-      if (audioRef.current && !hasPlayed) {
+      if (audioRef.current && !isPlaying) {
         audioRef.current.play()
-          .then(() => {
-            setIsPlaying(true);
-            setHasPlayed(true);
-          })
+          .then(() => setIsPlaying(true))
           .catch(() => setIsPlaying(false));
         document.removeEventListener('click', handleFirstInteraction);
       }
@@ -38,7 +35,7 @@ const AudioPlayer = () => {
     return () => {
       document.removeEventListener('click', handleFirstInteraction);
     };
-  }, [hasPlayed]);
+  }, [isPlaying]);
 
   return (
     <div className="fixed bottom-6 left-6 z-50">
