@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Cinzel, DM_Sans } from 'next/font/google';
 import '../styles/globals.css';
-import AudioPlayer from '@/components/AudioPlayer';
 
 const cinzel = Cinzel({
   subsets: ['latin'],
