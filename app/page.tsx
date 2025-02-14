@@ -31,17 +31,17 @@ const RomanticGallery = () => {
   const photos = [
     {
       src: '/foto1.jpg',
-      text: 'Gracias Dios por cruzar nuestros caminos en el momento perfecto💍',
+      text: 'Nuestro encuentro no fue coincidencia, fue el plan perfecto de Dios y por eso siempre estaré agradecido💍',
       position: 'start',
     },
     {
       src: '/foto2.jpg',
-      text: 'Es un privilegio compartir mi vida con una mujer tan maravillosa✨',
+      text: 'Es un lujo tenerte en mi vida, sentir tu amor y saber que no hay nadie en el mundo con quien prefiera estar✨',
       position: 'center',
     },
     {
       src: '/foto3.jpg',
-      text: 'En la inmensidad del mar, encuentro calma y el amor en tu mirada😍',
+      text: 'La magia del océano se refleja en tu sonrisa, transformando cada atardecer en un poema de amor😍',
       position: 'end',
     },
   ];
@@ -95,7 +95,7 @@ const RomanticGallery = () => {
             transition={{ delay: 0.5 }}
             className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed"
           >
-            Hagamos de este 14 de Febrero un día para dar gracias a Dios por nuestro amor🙏🏻❤️
+            Que este 14 de Febrero sea un día para agradecerle a Dios por el regalo más hermoso: nuestro amor🙏🏻❤️
           </motion.p>
         </div>
       </motion.header>
